@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Island (iOS Effect)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="dynamic-island-container">
+        <div id="island"
+            class="bg-black text-white shadow-xl flex items-center justify-center overflow-hidden cursor-pointer transition-all duration-500 ease-in-out">
+            <div id="island-content"
+                class="flex items-center justify-between w-full h-full px-2 text-xs font-semibold transition-opacity duration-200">
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 p-10 bg-white rounded-xl shadow-lg w-11/12 max-w-6xl">
+        <h1 class="text-2xl font-bold mb-4 text-center">Dynamic Island Simulator</h1>
+        <p class="mb-6 text-sm text-gray-600 text-center">
+            Click the buttons to trigger different states or a notification.
+            The island will shrink back to the idle state after 4 seconds.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <button onclick="setIslandState('idle')"
+                class="w-full py-3 px-4 whitespace-nowrap bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg shadow transition-colors duration-200 text-sm">
+                Idle State
+            </button>
+
+            <button onclick="setIslandState('music')"
+                class="w-full py-3 px-4 whitespace-nowrap bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-200 text-sm">
+                Music
+            </button>
+
+            <button
+                onclick="triggerNotification('New message received from Mark and Eve. You need to check the details in the app.')"
+                class="w-full py-3 px-4 whitespace-nowrap bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-200 text-sm">
+                Trigger Notification
+            </button>
+
+            <button
+                onclick="triggerNotification('Battery is 90% charged and everything is ready to use. This is a test of the text layout.')"
+                class="w-full py-3 px-4 whitespace-nowrap bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition-colors duration-200 text-sm">
+                Battery Alert (Medium Text)
+            </button>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
